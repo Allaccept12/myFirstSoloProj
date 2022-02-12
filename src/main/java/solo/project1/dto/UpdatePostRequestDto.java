@@ -1,13 +1,9 @@
 package solo.project1.dto;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 
-@Data
-@AllArgsConstructor
-@Builder
+@Getter @Setter
 public class UpdatePostRequestDto {
 
     private String title;

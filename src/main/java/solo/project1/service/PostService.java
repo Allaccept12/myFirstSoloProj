@@ -2,6 +2,7 @@ package solo.project1.service;
 
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import solo.project1.domain.Account;
@@ -16,17 +17,20 @@ import java.util.Optional;
 @Service
 @RequiredArgsConstructor
 @Transactional(readOnly = true)
+@Slf4j
 public class PostService {
 
     private final PostRepository postRepository;
 
-    public Long createPost(CreatePostRequestDto postRequestDto) {
-        Account account = Account.builder()
+    @Transactional
+    public void createPost(CreatePostRequestDto postRequestDto) {
+        Account post = Account.builder()
                 .title(postRequestDto.getTitle())
                 .name(postRequestDto.getName())
                 .content(postRequestDto.getContent())
                 .build();
-        return postRepository.save(account).getId();
+        postRepository.save(post);
+
     }
 
     public List<Account> findAll() {

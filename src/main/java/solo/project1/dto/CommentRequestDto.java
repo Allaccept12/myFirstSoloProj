@@ -6,10 +6,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Getter @Setter
-@AllArgsConstructor
-@Builder
 public class CommentRequestDto {
-
     private String content;
-
 }

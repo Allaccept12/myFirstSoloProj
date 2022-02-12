@@ -36,7 +36,6 @@ public class Account extends TimeStamped { // 게시글임...
         this.content = content;
         this.name = name;
     }
-
     public void updatePost(UpdatePostRequestDto dto) {
         this.title = dto.getTitle();
         this.name = dto.getName();

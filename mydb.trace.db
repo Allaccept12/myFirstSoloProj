@@ -1,0 +1,89 @@
+2022-02-12 00:09:54 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "
+    create table comment (
+       comment_id bigint not null,
+        created_time timestamp,
+        modified_time timestamp,
+        content varchar(255),
+        post_id[*]' bigint, primary key (comment_id))"; SQL statement:
+
+    create table comment (
+       comment_id bigint not null,
+        created_time timestamp,
+        modified_time timestamp,
+        content varchar(255),
+        post_id' bigint, primary key (comment_id)) [42000-200]
+2022-02-12 00:09:54 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "
+    alter table comment 
+       add constraint FKsf4admuv0ue6lvi94h35fpg6f 
+       foreign key (post_id[*]') references post"; SQL statement:
+
+    alter table comment 
+       add constraint FKsf4admuv0ue6lvi94h35fpg6f 
+       foreign key (post_id') references post [42000-200]
+2022-02-12 00:20:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "
+    create table comment (
+       comment_id bigint not null,
+        created_time timestamp,
+        modified_time timestamp,
+        content varchar(255),
+        account_id bigint,
+        post_id[*]' bigint, primary key (comment_id))"; SQL statement:
+
+    create table comment (
+       comment_id bigint not null,
+        created_time timestamp,
+        modified_time timestamp,
+        content varchar(255),
+        account_id bigint,
+        post_id' bigint, primary key (comment_id)) [42000-200]
+2022-02-12 00:20:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "COMMENT" not found; SQL statement:
+
+    alter table comment 
+       add constraint FKp41h5al2ajp1q0u6ox3i68w61 
+       foreign key (account_id) 
+       references account [42102-200]
+2022-02-12 00:20:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "
+    alter table comment 
+       add constraint FKsf4admuv0ue6lvi94h35fpg6f 
+       foreign key (post_id[*]') references post"; SQL statement:
+
+    alter table comment 
+       add constraint FKsf4admuv0ue6lvi94h35fpg6f 
+       foreign key (post_id') references post [42000-200]
+2022-02-12 00:29:51 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "
+    alter table comment 
+       add column post_id[*]' bigint"; SQL statement:
+
+    alter table comment 
+       add column post_id' bigint [42000-200]
+2022-02-12 00:29:51 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "
+    alter table comment 
+       add constraint FKsf4admuv0ue6lvi94h35fpg6f 
+       foreign key (post_id[*]') references post"; SQL statement:
+
+    alter table comment 
+       add constraint FKsf4admuv0ue6lvi94h35fpg6f 
+       foreign key (post_id') references post [42000-200]
+2022-02-12 09:51:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "
+    alter table comment 
+       add column post_id[*]' bigint"; SQL statement:
+
+    alter table comment 
+       add column post_id' bigint [42000-200]
+2022-02-12 09:51:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "
+    alter table comment 
+       add constraint FKsf4admuv0ue6lvi94h35fpg6f 
+       foreign key (post_id[*]') references post"; SQL statement:
+
+    alter table comment 
+       add constraint FKsf4admuv0ue6lvi94h35fpg6f 
+       foreign key (post_id') references post [42000-200]

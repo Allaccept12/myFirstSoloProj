@@ -1,0 +1,30 @@
+# MySQL 설정
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # DB Source
+    url: jdbc:mysql://localhost:3306/testdb?useSSL=false&allowPublicKeyRetrieval=true
+    # DB username
+    username: root
+    # DB password
+    password: dkemf21518@
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        format_sql: true
+        default_batch_fetch_size: 100
+    generate-ddl: true
+#url: jdbc:mysql://springboot-data-database.c5giozjxeuua.ap-northeast-2.rds.amazonaws.com:3306/MyBlog?useSSL=false&allowPublicKeyRetrieval=true
+#username: admin
+#  h2:
+#    console:
+#      enabled: true
+#  datasource:
+#    url: jdbc:h2:mem:testdb
+
+
+logging:
+  level:
+    org.hibernate.SQL: debug

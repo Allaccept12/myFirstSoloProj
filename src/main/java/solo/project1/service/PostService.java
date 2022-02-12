@@ -43,14 +43,17 @@ public class PostService {
 
     @Transactional
     public void updatePost(Long postId, UpdatePostRequestDto updatePostRequestDto) {
-        Account account = postRepository.findById(postId).orElseThrow(NullPointerException::new);
-        account.updatePost(updatePostRequestDto);
+        Account post = postRepository.findById(postId).orElseThrow(NullPointerException::new);
+        post.updatePost(updatePostRequestDto);
     }
     @Transactional
     public void deletePost(Long postId) {
         postRepository.deleteById(postId);
     }
 
+    public Account findById(Long postId) {
+        return postRepository.findById(postId).orElseThrow(NullPointerException::new);
+    }
 
 
 }

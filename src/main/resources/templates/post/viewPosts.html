@@ -16,12 +16,16 @@
             </tr>
             </thead>
             <tbody>
-            <tr th:each="post : ${posts}">
-                <td th:text="${post.postId}"></td>
-                <td th:text="${post.title}"></td>
-                <td th:text="${post.name}"></td>
-                <td th:text="${post.getCreateTime()}"></td>
-            </tr>
+                <tr th:each="post : ${posts}">
+                    <td th:text="${post.postId}"></td>
+                    <td th:text="${post.title}"></td>
+                    <td th:text="${post.name}"></td>
+                    <td th:text="${post.createTime}"></td>
+                    <td>
+                        <a href="#" th:href="@{/post/{postId}/view (postId=${post.postId})}" class="btn btn-primary" role="button">보기</a>
+                        <a href="#" th:href="@{/post/{postId}/edit (postId=${post.postId})}" class="btn btn-primary" role="button">수정</a>
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>

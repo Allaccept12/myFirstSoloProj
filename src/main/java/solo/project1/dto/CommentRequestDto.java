@@ -10,7 +10,4 @@ public class CommentRequestDto {
     @NotEmpty(message = "내용을 입력해 주세요.")
     private String content;
 
-
-
-
 }

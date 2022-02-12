@@ -35,7 +35,8 @@ public class PostController {
     }
 
     @PostMapping("/post/new")
-    public String createPost(@Valid @ModelAttribute("post") CreatePostRequestDto postRequestDto, BindingResult result) {
+    public String createPost(@Valid @ModelAttribute("post") CreatePostRequestDto postRequestDto,
+                             BindingResult result) {
         if(result.hasErrors()){
             return "post/createPost";
         }

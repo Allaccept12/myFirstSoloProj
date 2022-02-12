@@ -18,7 +18,6 @@ public class CommentResponseDto {
 
     private Long comment_id;
     private String account_name;
-    @NotEmpty(message = "댓글 내용은 필수입니다.")
     private String content;
     private LocalDateTime createTime;
 

@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import solo.project1.dto.CommentRequestDto;
+import solo.project1.dto.CommentResponseDto;
 
 import javax.persistence.*;
 
@@ -33,7 +34,7 @@ public class Comment extends TimeStamped {
         this.account.getComments().add(this);
     }
 
-    public void updateComment(CommentRequestDto dto) {
+    public void updateComment(CommentResponseDto dto) {
         this.content = dto.getContent();
     }
 

@@ -7,6 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 import solo.project1.domain.Account;
 import solo.project1.domain.Comment;
 import solo.project1.dto.CommentRequestDto;
+import solo.project1.dto.CommentResponseDto;
 import solo.project1.repository.CommentRepository;
 import solo.project1.repository.PostRepository;
 
@@ -30,7 +31,7 @@ public class CommentService {
                 .build();
         commentRepository.save(comment);
     }
-    public void updateComment(CommentRequestDto commentRequestDto,Long commentId) {
+    public void updateComment(CommentResponseDto commentRequestDto, Long commentId) {
         Comment comment = commentRepository.findById(commentId).orElseThrow(NullPointerException::new);
         comment.updateComment(commentRequestDto);
     }
@@ -39,6 +40,11 @@ public class CommentService {
         Comment comment = commentRepository.findById(commentId).orElseThrow(NullPointerException::new);
         comment.deleteComment();
         commentRepository.deleteById(commentId);
+    }
+
+    @Transactional(readOnly = true)
+    public Comment findById(Long commentId) {
+        return commentRepository.findById(commentId).get();
     }
 
 }

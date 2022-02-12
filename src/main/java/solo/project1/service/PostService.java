@@ -52,6 +52,7 @@ public class PostService {
     }
 
     public Account findById(Long postId) {
+        log.info(postId.toString());
         return postRepository.findById(postId).orElseThrow(NullPointerException::new);
     }
 

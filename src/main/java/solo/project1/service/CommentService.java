@@ -10,6 +10,9 @@ import solo.project1.dto.CommentRequestDto;
 import solo.project1.repository.CommentRepository;
 import solo.project1.repository.PostRepository;
 
+import javax.swing.text.html.Option;
+import java.util.Optional;
+
 @Service
 @RequiredArgsConstructor
 @Transactional
@@ -18,15 +21,15 @@ public class CommentService {
     private final CommentRepository commentRepository;
     private final PostRepository postRepository;
 
-    public Long createComment(CommentRequestDto commentRequestDto, Long postId) {
-        Account account = postRepository.findById(postId).orElseThrow(NullPointerException::new);
+
+    public void createComment(CommentRequestDto commentRequestDto,Long postId) {
+        Account post = postRepository.findById(postId).orElseThrow(NullPointerException::new);
         Comment comment = Comment.builder()
                 .content(commentRequestDto.getContent())
-                .post(account)
+                .post(post)
                 .build();
-        return commentRepository.save(comment).getId();
+        commentRepository.save(comment);
     }
-
     public void updateComment(CommentRequestDto commentRequestDto,Long commentId) {
         Comment comment = commentRepository.findById(commentId).orElseThrow(NullPointerException::new);
         comment.updateComment(commentRequestDto);

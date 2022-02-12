@@ -15,4 +15,7 @@ public interface PostRepository extends JpaRepository<Account, Long> {
 
     @Query("select p from Account p order by p.createdTime desc ")
     List<Account> findAll();
+
+    @Query("select p from Account p where p.id =:postId")
+    Account customFindById(@Param("postId") long postId);
 }

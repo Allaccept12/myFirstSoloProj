@@ -3,11 +3,11 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     # DB Source
-    url: jdbc:mysql://localhost:3306/testdb?useSSL=false&allowPublicKeyRetrieval=true
+    url: jdbc:mysql://127.0.0.1:3306/firstSolo?useSSL=false&allowPublicKeyRetrieval=true
     # DB username
     username: root
     # DB password
-    password: dkemf21518@
+    password: 1234
   jpa:
     hibernate:
       ddl-auto: create

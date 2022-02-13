@@ -24,6 +24,7 @@
                     <td>
                         <a href="#" th:href="@{/post/{postId}/view (postId=${post.postId})}" class="btn btn-primary" role="button">보기</a>
                         <a href="#" th:href="@{/post/{postId}/edit (postId=${post.postId})}" class="btn btn-primary" role="button">수정</a>
+                        <a href="#" th:href="@{/post/{postId}/delete (postId=${post.postId})}" class="btn btn-primary" role="button" th:method="post">삭제</a>
                     </td>
                 </tr>
             </tbody>

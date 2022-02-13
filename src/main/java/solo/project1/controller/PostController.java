@@ -61,6 +61,11 @@ public class PostController {
                 .collect(Collectors.toList()));
         return "post/viewDetailPost";
     }
+    @GetMapping("/post/{postId}/delete")
+    public String deletePost(@PathVariable Long postId) {
+        postService.deletePost(postId);
+        return "redirect:/posts";
+    }
 
     @GetMapping("/post/{postId}/edit")
     public String updatePostForm(@PathVariable Long postId, Model model) {

@@ -35,7 +35,7 @@ public class CommentController {
     public String createComment(@Valid @ModelAttribute("comments") CommentRequestDto commentRequestDto,
                                 @RequestParam("postId") Long postId) {
         if(commentRequestDto.getContent().isEmpty()) {
-            return "/comment/message";
+            return "comment/message";
         }
         commentService.createComment(commentRequestDto, postId);
         return "redirect:/";
@@ -61,7 +61,7 @@ public class CommentController {
     public String updateComment(@PathVariable Long commentId,
                                 @Valid @ModelAttribute("comment") CommentResponseDto comment) {
         if(comment.getContent().isEmpty()) {
-            return "/comment/message";
+            return "comment/message";
         }
         commentService.updateComment(comment,commentId);
         return "redirect:/";

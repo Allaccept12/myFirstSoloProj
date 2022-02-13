@@ -9,6 +9,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.servlet.ModelAndView;
 import solo.project1.domain.Comment;
 import solo.project1.dto.CommentRequestDto;
 import solo.project1.dto.CommentResponseDto;
@@ -31,11 +32,10 @@ public class CommentController {
     }
 
     @PostMapping("/comment")
-    public String createComment(@Validated @ModelAttribute("comments") CommentRequestDto commentRequestDto,
-                                @RequestParam("postId") Long postId,
-                                BindingResult result) {
-        if(result.hasErrors()) {
-            return "comment/createCommentForm";
+    public String createComment(@Valid @ModelAttribute("comments") CommentRequestDto commentRequestDto,
+                                @RequestParam("postId") Long postId) {
+        if(commentRequestDto.getContent().isEmpty()) {
+            return "/comment/message";
         }
         commentService.createComment(commentRequestDto, postId);
         return "redirect:/";
@@ -59,10 +59,9 @@ public class CommentController {
 
     @PostMapping("/comment/{commentId}/edit")
     public String updateComment(@PathVariable Long commentId,
-                                @Valid @ModelAttribute("comment") CommentResponseDto comment,
-                                BindingResult result) {
-        if(result.hasErrors()){
-            return "comment/updateComment";
+                                @Valid @ModelAttribute("comment") CommentResponseDto comment) {
+        if(comment.getContent().isEmpty()) {
+            return "/comment/message";
         }
         commentService.updateComment(comment,commentId);
         return "redirect:/";

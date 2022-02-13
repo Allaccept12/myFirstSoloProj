@@ -10,12 +10,10 @@ import java.util.Optional;
 
 public interface PostRepository extends JpaRepository<Account, Long> {
 
-    @Query("select distinct p from Account p left join fetch p.comments where p.id = :postId")
+    @Query("select distinct p from Account p left join fetch p.comments c where p.id = :postId order by c.createdTime desc ")
     Optional<List<Account>> findPostWithAllComment(@Param("postId") Long postId);
 
     @Query("select p from Account p order by p.createdTime desc ")
     List<Account> findAll();
 
-    @Query("select p from Account p where p.id =:postId")
-    Account customFindById(@Param("postId") long postId);
 }

@@ -4,13 +4,13 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     # DB Source
     #url: jdbc:mysql://springboot-data-database.c5giozjxeuua.ap-northeast-2.rds.amazonaws.com:3306/MyBlog?useSSL=false&allowPublicKeyRetrieval=true
-    url: jdbc:mysql://127.0.0.1:3306/firstSolo?useSSL=false&allowPublicKeyRetrieval=true
+    url: jdbc:mysql://127.0.0.1:3306/testdb?useSSL=false&allowPublicKeyRetrieval=true
     # DB username
     #username: admin
     username: root
     # DB password
     #password: dkemf21518
-    password: dkemf21518
+    password: dkemf21518@
   jpa:
     hibernate:
       ddl-auto: create
